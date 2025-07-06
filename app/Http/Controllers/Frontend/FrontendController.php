@@ -11,7 +11,8 @@
     {
         public function home()
         {
-          return '<h1>Controller FrontendController@home Berhasil Dijalankan</h1>';
+            $featuredProducts = Product::with('category')->latest()->take(4)->get();
+            return view('frontend.home', compact('featuredProducts'));
         }
 
         public function shop(Request $request)
