@@ -19,6 +19,7 @@
                 $table->string('payment_proof')->nullable();
                 $table->string('shipping_receipt_number')->nullable();
                 $table->string('status')->default('pending_payment');
+                $table->timestamp('paid_at')->nullable();
                 $table->timestamps();
             });
         }
@@ -28,4 +29,3 @@
             Schema::dropIfExists('orders');
         }
     };
-    
